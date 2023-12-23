@@ -9,11 +9,9 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "mongodb": "^5.9.2",
     "next": "14.0.4",
     "react": "^18",
-    "react-dom": "^18",
-    "typed.js": "^2.0.12"
+    "react-dom": "^18"
   },
   "devDependencies": {
     "autoprefixer": "^10.0.1",

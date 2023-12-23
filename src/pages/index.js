@@ -31,17 +31,23 @@ export default function Home({homedata}) {
 
 
 export const getServerSideProps = async (ctx) => {
-  const { req } = ctx;
-  const baseUrl = req ? `${req.headers['x-forwarded-proto']}://${req.headers.host}` : '';
-  const apiUrl = `${baseUrl}/api/project`;
 
-  const res = await fetch(apiUrl);
+
+  const res = await fetch(`https://server-side-beta.vercel.app/portfolio-project`);
+  const res1 = await fetch(`https://server-side-beta.vercel.app/portfolio`);
+  const res2 = await fetch(`https://server-side-beta.vercel.app/portfolio-category`);
   const data = await res.json();
+  const data1 = await res1.json();
+  const data2 = await res2.json();
   const homedata = data.data;
+  const portfoliodata = data1.data;
+  const portfoliocategorydata = data2.data;
 
   return {
     props: {
       homedata,
+      portfoliodata,
+      portfoliocategorydata
     },
   };
 };
